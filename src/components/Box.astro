@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+import avatar from "../../public/avatar.png";
+
+export interface Props {
+  links: { href: string; label: string; version: string }[]; // Array of links
+}
+
+const { links } = Astro.props;
+---
+
+<div class="container">
+  <div class="box">
+    <Image
+      class="avt"
+      src={avatar}
+      alt="avatar.png"
+      width="1024"
+      height="1024"
+      widths={[144, 256, 512, 1024]}
+      quality="max"
+      loading="eager"
+    />
+    <div id="names">
+      <div class="name">Lucas.</div>
+      <div class="username">@invisyarcticfox</div>
+    </div>
+    <div class="link-list">
+      {
+        links.map((link) => (
+          <a href={link.href}>
+            <img
+              src={`https://cdn.jsdelivr.net/npm/simple-icons${link.version}/icons/${link.label.toLowerCase()}.svg`}
+              alt={`${link.label} icon`}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .box {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    background: #555;
+    opacity: 0;
+    animation: animIn 2s 500ms ease forwards;
+    transition: transform 100ms ease-out;
+    box-shadow: 0 0 20px rgba($color: #0a0, $alpha: .6), 0 0 40px rgba($color: #0a0, $alpha: .4);
+    img.avt {
+      width: 256px;
+      height: 256px;
+      border-radius: 25px;
+      outline: 5px solid #80848E;
+    }
+  }
+
+  #names {
+    .name {
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .username {
+      font-size: 20px;
+    }
+  }
+
+  .link-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 0 5px;
+      &:hover img {
+        filter: invert(75%);
+        transition: filter ease 0.2s;
+      }
+      img {
+        width: 45px;
+        height: 45px;
+        filter: invert(100%);
+        transition: filter ease 0.2s;
+      }
+    }
+  }
+
+  @keyframes animIn {
+    from {
+      transform: scale(0.25);
+      opacity: 0;
+      filter: blur(5px);
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+</style>
+
+<script lang="js">
+  const ws = new WebSocket("wss://api.lanyard.rest/socket");
+  const statusColours = {
+    online: "#23A55A",
+    idle: "#F0B232",
+    dnd: "#F23F43",
+    offline: "#80848E",
+  };
+  const bigAvt = document.querySelector('.box .avt')
+  const box = document.querySelector('.box')
+  const BsColour = '0, 170, 0'
+
+  ws.onopen = () => {
+    console.log("ws connection open");
+  };
+
+  ws.onmessage = ({ data: msg }) => {
+    try {
+      const data = JSON.parse(msg);
+      console.log(data);
+      switch (data.op) {
+        case 1:
+          ws.send(
+            JSON.stringify({
+              op: 2,
+              d: {
+                subscribe_to_id: "470193291053498369",
+              },
+            }),
+          );
+          setInterval(() => {
+            ws.send(
+              JSON.stringify({
+                op: 3,
+              }),
+            );
+          }, data.d.heartbeat_interval);
+          break;
+      }
+
+      bigAvt.style.outlineColor = statusColours[data.d.discord_status]
+
+    } catch (error) {
+      console.error("ws error", error);
+    }
+  };
+</script>

@@ -1,5 +1,5 @@
 {
-  "name": "astrosite",
+  "name": "afraid-azimuth",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.2"
+    "astro": "^5.1.2",
+    "sass": "^1.83.1"
   }
 }
