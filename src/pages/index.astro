@@ -2,15 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Box from '../components/Box.astro';
 
+const meta = {
+	title: 'invisyarcticfox/index',
+	metatitle: 'invisyarcticfox.uk',
+	metaurl: 'https://invisyarcticfox.uk'
+}
 const links = [
-{ href: 'https://discord.com/users/470193291053498369', label: 'discord', version: '@latest' },
-{ href: 'https://twitter.com/invisyarcticfox', label: 'twitter', version: '@v11' },
-{ href: 'https://bsky.app/profile/invisyarcticfox.uk', label: 'bluesky', version: '@latest' },
-{ href: 'https://t.me/invisyarcticfox', label: 'telegram', version: '@latest' },
-{ href: 'mailto:lucas@invisyarcticfox.uk', label: 'maildotru', version: '@latest' }
+	{ href: 'https://discord.com/users/470193291053498369', label: 'discord', colour: '#5865F2'},
+	{ href: 'https://twitter.com/invisyarcticfox', label: 'twitter', colour: '#1D9BF0'},
+	{ href: 'https://bsky.app/profile/invisyarcticfox.uk', label: 'bluesky', colour: '#0285FF'},
+	{ href: 'https://t.me/invisyarcticfox', label: 'telegram', colour: '#26A5E4'},
+	{ href: 'mailto:lucas@invisyarcticfox.uk', label: 'mail', colour: '#eee' }
 ]
 ---
 
-<Layout>
+<Layout meta={meta}>
 	<Box links={links}/>
 </Layout>

@@ -1,3 +1,15 @@
+---
+export interface Props {
+	meta: {
+		title: string;
+		metatitle: string;
+		metaurl: string;
+	}
+}
+
+const { meta } = Astro.props
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,7 +17,32 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/avatar.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>invisyarcticfox</title>
+
+    <meta name="title" content={meta.metatitle}>
+    <meta name="description" content="a gay fox that likes military aviation :3">
+    <meta name="keywords" content="blender, animation, photography, sona art, furry, invisyarcticfox, invisy arcticfox">
+    <meta name="image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+    <meta name="author" content="invisyarcticfox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00aa00">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="30 days">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={meta.metatitle}>
+    <meta property="og:description" content="a gay fox that likes military aviation :3">
+    <meta property="og:url" content={meta.metaurl}>
+    <meta property="og:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@invisyarcticfox">
+    <meta name="twitter:creator" content="@invisyarcticfox">
+    <meta name="twitter:title" content={meta.metatitle}>
+    <meta name="twitter:description" content="a gay fox that likes military aviation :3">
+    <meta name="twitter:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+		<title>{meta.title}</title>
 	</head>
 	<body>
 		<slot />
