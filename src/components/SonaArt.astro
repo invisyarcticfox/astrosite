@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import "../styles/sonaart.scss";
+
+export interface Props {
+  imagePath: string;
+  artist: string;
+  artisturl: string;
+}
+
+const { imagePath, artist, artisturl } = Astro.props;
+---
+
+<div class="cont">
+  <Image
+    src={`https://cdn.invisyarcticfox.uk/art/${imagePath}`}
+    alt={imagePath}
+    width={1024}
+    height={1024}
+    loading={"lazy"}
+    style={`background-image: url(https://cdn.invisyarcticfox.uk/art/small/${imagePath}); background-size: contain`}
+  />
+  <div class="artist">
+    <a href={artisturl} target="_blank" rel="noopener noreferrer">
+      @<u>{artist}</u>
+    </a>
+  </div>
+</div>

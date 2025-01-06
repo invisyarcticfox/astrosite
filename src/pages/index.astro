@@ -1,21 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Box from '../components/Box.astro';
+import Layout from "../layouts/Layout.astro";
+import Box from "../components/Box.astro";
 
 const meta = {
-	title: 'invisyarcticfox/index',
-	metatitle: 'invisyarcticfox.uk',
-	metaurl: 'https://invisyarcticfox.uk'
-}
+	title: "invisyarcticfox/index",
+	metatitle: "invisyarcticfox.uk",
+	metadesc: "a gay fox that likes military aviation :3",
+	metaurl: "https://invisyarcticfox.uk",
+};
+
 const links = [
-	{ href: 'https://discord.com/users/470193291053498369', label: 'discord', colour: '#5865F2'},
-	{ href: 'https://twitter.com/invisyarcticfox', label: 'twitter', colour: '#1D9BF0'},
-	{ href: 'https://bsky.app/profile/invisyarcticfox.uk', label: 'bluesky', colour: '#0285FF'},
-	{ href: 'https://t.me/invisyarcticfox', label: 'telegram', colour: '#26A5E4'},
-	{ href: 'mailto:lucas@invisyarcticfox.uk', label: 'mail', colour: '#eee' }
-]
+	{ href: "https://discord.com/users/470193291053498369", label: "discord", colour: "#5865F2", },
+	{ href: "https://twitter.com/invisyarcticfox", label: "twitter", colour: "#1D9BF0", },
+	{ href: "https://bsky.app/profile/invisyarcticfox.uk", label: "bluesky", colour: "#0285FF", },
+	{ href: "https://t.me/invisyarcticfox", label: "telegram", colour: "#26A5E4", },
+	{ href: "https://www.last.fm/user/invisyarcticfox", label: "lastfm", colour: "#D51007", },
+	{ href: "mailto:lucas@invisyarcticfox.uk", label: "email", colour: "#eee" }
+];
 ---
 
 <Layout meta={meta}>
-	<Box links={links}/>
+	<Box links={links} />
 </Layout>

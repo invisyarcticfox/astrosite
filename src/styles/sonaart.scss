@@ -1,0 +1,28 @@
+div.cont {
+  display: inline-block;
+  width: calc((100vw / 3) - 25px);
+  vertical-align: middle;
+  margin: 0 5px;
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  div.artist {
+    font-size: 30px;
+    padding: 10px 0 10px 10px;
+    transform: translateY(-62px);
+    position: relative;
+    background: #141414aa;
+    backdrop-filter: blur(5px);
+
+    a {
+      color: #fff;
+      &:hover {
+        color: #aaa;
+        text-decoration: unset;
+      }
+    }
+  }
+}

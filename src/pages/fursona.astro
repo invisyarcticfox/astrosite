@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Back from "../components/Back.astro";
+import SonaArt from "../components/SonaArt.astro";
+
+const meta = {
+	title: "invisyarcticfox/fursona",
+	metatitle: "invisyarcticfox.uk",
+	metadesc: "a gay fox that likes military aviation :3",
+	metaurl: "https://invisyarcticfox.uk/fursona",
+};
+
+const res = await fetch("https://api.invisyarcticfox.uk/sonaart");
+const data = await res.json();
+---
+
+<Layout meta={meta}>
+	<Back />
+	<h1>Gallery</h1>
+	<div class="gallery">
+		{
+			data.map((item: { file: string; artist: string; artisturl: string }) => (
+				<SonaArt
+					imagePath={item.file}
+					artist={item.artist}
+					artisturl={item.artisturl}
+				/>
+			))
+		}
+	</div>
+</Layout>
+
+<style>
+	body {
+		width: calc(100vw - 25px);
+		margin-left: 25px;
+	}
+	h1 {
+		padding-top: 50px;
+	}
+</style>

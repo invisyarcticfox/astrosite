@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import avatar from "../../public/avatar.png";
+import "../styles/box.scss";
 
 export interface Props {
   links: {
@@ -25,198 +26,43 @@ const { links } = Astro.props;
       loading="eager"
     />
     <div id="names">
-      <div class="name">Lucas.</div>
+      <div class="name">
+        Lucas.
+        <svg class="fox">
+          <use href="/icons.svg#fox"></use>
+        </svg>
+      </div>
       <div class="username">@invisyarcticfox</div>
     </div>
     <div class="link-list">
-      {links.map((link) => (
-        <a href={link.href} aria-label={link.label.toLocaleUpperCase()}>
-          <svg class="icon" fill={link.colour}>
-            <use href={`/icons.svg#${link.label}`}></use>
-          </svg>
-        </a>
-        ))}
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-label={link.label.toUpperCase()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon" fill={link.colour}>
+              <use href={`/icons.svg#${link.label.toLowerCase()}`} />
+            </svg>
+          </a>
+        ))
+      }
     </div>
     <div class="page-list">
-      <a href="./">link1</a>
-      <a href="./">link2</a>
-      <a href="./">link3</a>
+      <a href="./fursona">fursona</a>
+      <a href="./blender">animations</a>
     </div>
     <div class="info">
-      <span>version <b>1.0.1</b></span>
-      |
+      <div class="commit">commit <a href=""></a></div>
       <span>
-        <a href="https://github.com/Phineas/lanyard" target="_blank" rel="noopener noreferrer">Lanyard</a>,
-        <a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Simple Icons</a>
+        <a href="https://github.com/Phineas/lanyard">Lanyard</a>,
+        <a href="https://simpleicons.org/">Simple Icons</a>
       </span>
     </div>
   </div>
 </div>
 
-<style lang="scss">
-  :root {
-    --boxbg: #333;
-    --boxborder: #ccc;
-    --boxshadow: 0, 170, 0;
-    --linkbg: #555;
-  }
-  a,
-  a:visited,
-  a:active,
-  a:focus {
-    color: #fff;
-    text-decoration: none;
-    transition: color 200ms ease;
-  }
-  a:hover {
-    color: #0f0;
-    text-decoration: underline !important;
-    transition: color 200ms ease;
-  }
-
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-  }
-
-  .box {
-    position: absolute;
-    text-align: center;
-    padding: 20px;
-    padding-bottom: 5px;
-    border: 5px solid var(--boxborder);
-    border-radius: 10px;
-    background: var(--boxbg);
-    opacity: 0;
-    animation: animIn 2s 250ms ease forwards;
-    transition: transform 100ms ease-out;
-    box-shadow: 0 0 20px rgba(var(--boxshadow), .6), 0 0 40px rgba(var(--boxshadow), .4);
-
-    img.avt {
-      width: 256px;
-      height: 256px;
-      border-radius: 25px;
-      outline: 5px solid #80848E;
-    }
-  }
-
-  #names {
-    .name {
-      font-weight: bold;
-      font-size: 30px;
-    }
-
-    .username {
-      font-size: 20px;
-    }
-  }
-
-  .link-list, .page-list {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    margin-top: 15px;
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      margin: 0 5px;
-      &:hover svg {
-        transform: scale(1.15);
-        transition: transform 200ms ease;
-      }
-      svg {
-        transform: scale(1);
-        width: 45px;
-        height: 45px;
-        transition: transform 200ms ease;
-      }
-    }
-  }
-  .page-list {
-    font-size: 20px;
-    a {
-      font-weight: bold;
-      background: var(--linkbg);
-      padding: 5px 15px;
-    }
-  }
-
-  .info {
-    position: relative;
-    text-align: left;
-    color: #eee;
-    font-size: 12px;
-    margin-top: 15px;
-    left: -15px;
-    a {
-      text-decoration: underline !important;
-    }
-  }
-
-  @keyframes animIn {
-    from {
-      transform: scale(0.25);
-      opacity: 0;
-      filter: blur(5px);
-    }
-    to {
-      transform: scale(1.15);
-      opacity: 1;
-      filter: blur(0);
-    }
-  }
-</style>
-
-<script lang="js">
-  const ws = new WebSocket("wss://api.lanyard.rest/socket");
-  const statusColours = {
-    online: "#23A55A",
-    idle: "#F0B232",
-    dnd: "#F23F43",
-    offline: "#80848E",
-  };
-  const bigAvt = document.querySelector('.box .avt')
-  const box = document.querySelector('.box')
-  const BsColour = '0, 170, 0'
-
-  ws.onopen = () => {
-    console.log("ws connection open");
-  };
-
-  ws.onmessage = ({ data: msg }) => {
-    try {
-      const data = JSON.parse(msg);
-      console.log(data);
-      switch (data.op) {
-        case 1:
-          ws.send(
-            JSON.stringify({
-              op: 2,
-              d: {
-                subscribe_to_id: "470193291053498369",
-              },
-            }),
-          );
-          setInterval(() => {
-            ws.send(
-              JSON.stringify({
-                op: 3,
-              }),
-            );
-          }, data.d.heartbeat_interval);
-          break;
-      }
-
-      bigAvt.style.outlineColor = statusColours[data.d.discord_status]
-
-    } catch (error) {
-      console.error("ws error", error);
-    }
-  };
-</script>
+<script src="../scripts/lanyard.js"></script>
+<script src="../scripts/gitrepo.js"></script>
