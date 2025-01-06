@@ -1,0 +1,14 @@
+---
+export interface Props {
+  title: string;
+  src: string;
+  width: string;
+}
+
+const { title, src, width } = Astro.props
+---
+
+<div class="item">
+  <div class="title">{title}</div>
+  <video width={width} src={`https://cdn.invisyarcticfox.uk/work/${src}`} controls />
+</div>

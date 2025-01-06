@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Box from "../components/Box.astro";
+import Blender from "./blender.astro";
+import Fursona from "./fursona.astro"
 
 const meta = {
 	title: "invisyarcticfox/index",
@@ -21,4 +23,6 @@ const links = [
 
 <Layout meta={meta}>
 	<Box links={links} />
+	<Fursona />
+	<Blender />
 </Layout>

@@ -92,7 +92,6 @@ a:focus {
   a {
     --tsdelay: 250ms;
     z-index: 1;
-
     &::before {
       content: attr(aria-label);
       text-align: center;
@@ -129,8 +128,7 @@ a:focus {
     font-weight: bold;
     background: $linkbg;
     padding: 5px 15px;
-    width: 125px;
-
+    width: 50%;
     &:hover {
       text-decoration: underline;
     }
@@ -145,17 +143,20 @@ a:focus {
   font-size: 12px;
   margin-top: 15px;
   left: -15px;
+  width: calc(100% + 25px);
 
   div {
     margin: 2px 0;
-
+    float: left;
     p {
       display: inline;
-
       a {
         text-decoration: underline !important;
       }
     }
+  }
+  span {
+    float: right;
   }
 }
 

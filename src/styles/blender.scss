@@ -1,0 +1,27 @@
+#blender {
+  text-align: center;
+  margin: 0 auto;
+  width: 75%;
+  padding-top: 100px;
+  .item {
+    padding-bottom: 75px;
+    .title {
+      font-size: 25px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    video {
+      margin: 5px 0;
+    }
+    .notes {
+      margin-top: 10px;
+      font-size: 22px;
+    }
+  }
+  .divider {
+    width: 85%;
+    height: 1px;
+    background: #aaa;
+    margin: 20px auto;
+  }
+}

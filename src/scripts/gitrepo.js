@@ -20,7 +20,7 @@ async function logRepoDetails() {
     const recentCommitHashShort = recentCommitHash.slice(0, 7);
     commitTxt.textContent = recentCommitHashShort || '#';
     commitTxt.href =
-      `https://github.com/invisyarcticfox/astrosite/${recentCommitHash}` ||
+      `https://github.com/invisyarcticfox/astrosite/commit/${recentCommitHash}` ||
       '#';
   } catch (error) {
     console.error('Error fetching repository details:', error);
