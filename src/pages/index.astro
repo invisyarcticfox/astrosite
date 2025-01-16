@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Box from "../components/Box.astro";
-import Blender from "./blender.astro";
-import Fursona from "./fursona.astro"
 
 const meta = {
 	title: "invisyarcticfox/index",
@@ -12,17 +10,34 @@ const meta = {
 };
 
 const links = [
-	{ href: "https://discord.com/users/470193291053498369", label: "discord", colour: "#5865F2", },
-	{ href: "https://twitter.com/invisyarcticfox", label: "twitter", colour: "#1D9BF0", },
-	{ href: "https://bsky.app/profile/invisyarcticfox.uk", label: "bluesky", colour: "#0285FF", },
-	{ href: "https://t.me/invisyarcticfox", label: "telegram", colour: "#26A5E4", },
-	{ href: "https://www.last.fm/user/invisyarcticfox", label: "lastfm", colour: "#D51007", },
-	{ href: "mailto:lucas@invisyarcticfox.uk", label: "email", colour: "#eee" }
+	{
+		href: "https://discord.com/users/470193291053498369",
+		icon: "discord"
+	},
+	{
+		href: "https://twitter.com/invisyarcticfox",
+		icon: "x",
+		label: "twitter" // id rather use twitter but simple-icons insists on using x :( looking at you adamrusted
+	},
+	{
+		href: "https://bsky.app/profile/invisyarcticfox.uk",
+		icon: "bluesky"},
+	{
+		href: "https://t.me/invisyarcticfox",
+		icon: "telegram"},
+	{
+		href: "https://www.last.fm/user/invisyarcticfox",
+		icon: "lastdotfm",
+		label: "lastfm",
+	},
+	{
+		href: "mailto:lucas@invisyarcticfox.uk",
+		icon: "maildotru",
+		label: "email", // i dont actually use mail.ru but it has a nice icon
+	},
 ];
 ---
 
 <Layout meta={meta}>
 	<Box links={links} />
-	<Fursona />
-	<Blender />
 </Layout>

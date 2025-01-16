@@ -50,7 +50,6 @@ a:focus {
   .name {
     font-weight: bold;
     font-size: 30px;
-
     .fox {
       position: relative;
       width: 35px;
@@ -78,7 +77,6 @@ a:focus {
     align-items: center;
     text-decoration: none;
     margin: 0 5px;
-
     svg {
       width: 45px;
       height: 45px;
@@ -95,6 +93,7 @@ a:focus {
     &::before {
       content: attr(aria-label);
       text-align: center;
+      text-transform: uppercase;
       font-size: 5px;
       padding: 2px 4px;
       color: #fff;
@@ -148,6 +147,7 @@ a:focus {
   div {
     margin: 2px 0;
     float: left;
+
     p {
       display: inline;
       a {
@@ -155,6 +155,7 @@ a:focus {
       }
     }
   }
+
   span {
     float: right;
   }
