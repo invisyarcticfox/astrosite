@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import arcade1 from '../../imgs/fort/lucienwest/arcade1.png'
+import arcade2 from '../../imgs/fort/lucienwest/arcade2.png'
+import bar from '../../imgs/fort/lucienwest/bar.png'
+import grappler1 from '../../imgs/fort/lucienwest/grappler1.png'
+import grappler2 from '../../imgs/fort/lucienwest/grappler2.png'
+import grappler3 from '../../imgs/fort/lucienwest/grappler3.png'
+import grappler4 from '../../imgs/fort/lucienwest/grappler4.png'
+import graveyard from '../../imgs/fort/lucienwest/graveyard.png'
+import ram1 from '../../imgs/fort/lucienwest/ram1.png'
+import ram2 from '../../imgs/fort/lucienwest/ram2.png'
+import ram4 from '../../imgs/fort/lucienwest/ram4.png'
+import ram3 from '../../imgs/fort/lucienwest/ram3.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography/'
+
+interface Props {
+  size: number;
+  quality: number;
+}
+const { size, quality } = Astro.props
+---
+
+<div class="char fenn">
+  <a href={`${cdnUrl}lucienwest/big/arcade1.png`}   target="_blank" rel="noopener norefferer"><Image src={arcade1}    alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/arcade2.png`}   target="_blank" rel="noopener norefferer"><Image src={arcade2}    alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/bar.png`}       target="_blank" rel="noopener norefferer"><Image src={bar}        alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/grappler1.png`} target="_blank" rel="noopener norefferer"><Image src={grappler1}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/grappler2.png`} target="_blank" rel="noopener norefferer"><Image src={grappler2}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/grappler3.png`} target="_blank" rel="noopener norefferer"><Image src={grappler3}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/grappler4.png`} target="_blank" rel="noopener norefferer"><Image src={grappler4}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/graveyard.png`} target="_blank" rel="noopener norefferer"><Image src={graveyard}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/ram1.png`}      target="_blank" rel="noopener norefferer"><Image src={ram1}       alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/ram2.png`}      target="_blank" rel="noopener norefferer"><Image src={ram2}       alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/ram4.png`}      target="_blank" rel="noopener norefferer"><Image src={ram4}       alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}lucienwest/big/ram3.png`}      target="_blank" rel="noopener norefferer"><Image src={ram3}       alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+</div>

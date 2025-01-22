@@ -1,0 +1,45 @@
+.spotify a,
+.spotify a:visited,
+.spotify a:active,
+.spotify a:focus {
+  color: #0080ff;
+}
+
+.actcont {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  gap: 4px;
+  margin-left: 25px;
+
+  .spotify {
+    width: 100%;
+    border: 2px solid #000a;
+    background: #0005;
+    transition: opacity var(--conf);
+    opacity: 0;
+
+    .dim {
+      color: #aaa;
+    }
+
+    .bright {
+      color: #fff;
+    }
+
+    img.cover {
+      float: left;
+      width: calc(31px * 4);
+      height: calc(31px * 4);
+      margin-right: 5px;
+      padding: 5px;
+    }
+
+    span {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

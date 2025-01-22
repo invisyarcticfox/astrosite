@@ -1,0 +1,60 @@
+---
+import '../styles/_weather.scss'
+---
+
+<div id='weather'>
+  <img src="" alt="">
+  <div class='txt'>
+    <div class='desc'></div>
+    <div class='temp'></div>
+    <div class='time'></div>
+  </div>
+</div>
+
+
+<script lang="js">
+  const wElems = {
+    img: document.querySelector('#weather img'),
+    desc: document.querySelector('#weather .txt .desc'),
+    temp: document.querySelector('#weather .txt .temp'),
+    time: document.querySelector('#weather .txt .time')
+  }
+  async function getWeather() {
+    const url = 'https://api.invisyarcticfox.uk/weather'
+    try {
+      const res = await fetch(url)
+      if (!res.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      const data = await res.json()
+
+      wElems.img.src = `https://api.invisyarcticfox.uk/weather/icons/${data.weather[0].icon}`
+      wElems.desc.innerHTML = data.weather[0].description
+      wElems.temp.innerHTML = `${data.main.temp}&deg;c`
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  function setTime() {
+    const time = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    const splittime = time.format(new Date()).split(':');
+
+    wElems.time.innerHTML = `
+      ${splittime[0]}
+        <span class='colon'>:</span>
+      ${splittime[1]}
+      <i class='tz'>(GMT)</i>
+    `
+  }
+
+  getWeather()
+  setTime()
+  setInterval(() => {
+    setTime()
+  }, 15000);
+</script>

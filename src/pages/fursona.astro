@@ -1,29 +1,48 @@
 ---
-import SonaArt from "../components/SonaArt.astro";
+import Layout from '../layouts/Layout.astro';
+import SonaArt from '../components/SonaArt.astro';
 
-const res = await fetch("https://api.invisyarcticfox.uk/sonaart");
-const data = await res.json();
+const meta = {
+	title: 'invisyarcticfox/fursona',
+	metatitle: 'invisyarcticfox.uk/fursona',
+	metadesc: 'my fursona page!! for arts!!!!',
+	metaurl: 'https://invisyarcticfox.uk/fursona',
+};
 ---
 
-<div id="fursona">
-	<div class="gallery">
-		{
-			data.map((item: { file: string; artist: string; artisturl: string }) => (
-				<SonaArt
-					imagePath={item.file}
-					artist={item.artist}
-					artisturl={item.artisturl}
-				/>
-			))
-		}
-	</div>
-</div>
+<Layout meta={meta}>
+  <h1>Gallery</h1>
+  <SonaArt imgPth='/src/imgs/sonaart/eutubirthday.png' artistUrl='https://twitter.com/eutumned' egrLoad={true}/>
+  <SonaArt imgPth='/src/imgs/sonaart/eutuduo.png' artistUrl='https://twitter.com/eutumned' egrLoad={true}/>
+  <SonaArt imgPth='/src/imgs/sonaart/eutuicon.png' artistUrl='https://twitter.com/eutumned' egrLoad={true}/>
+  <SonaArt imgPth='/src/imgs/sonaart/creep.jpg' artistUrl='https://twitter.com/SugarDcreep'/>
+  <SonaArt imgPth='/src/imgs/sonaart/larrson.png' artistUrl='https://twitter.com/LarrsonMarrson'/>
+  <SonaArt imgPth='/src/imgs/sonaart/vipibolt.jpg' artistUrl='https://twitter.com/vipibolt'/>
+  <SonaArt imgPth='/src/imgs/sonaart/bananabird.jpg' artistUrl='https://twitter.com/hr_bananabird'/>
+  <h1>3d model</h1>
+  <model-viewer
+    src="/models/invisy.glb" ios-src="/models/invisy.usdz" ar
+    environment-image=""
+    poster=""
+    shadow-intensity="0"
+    camera-controls
+    touch-action="pan-y"
+  />
+</Layout>
 
 <style>
-	h1 {
-		padding-top: 50px;
-	}
-	#fursona {
-		padding-top: 200px;
-	}
+  h1 {
+    margin-top: 10px;
+    padding-top: 50px;
+  }
+  
+  model-viewer {
+    position: relative;
+    margin: 0 auto;
+    width: 100vw;
+    left: -10px;
+    height: 750px;
+  }
 </style>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" is:inline></script>

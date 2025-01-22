@@ -1,0 +1,56 @@
+#weather {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #0005;
+  border: 2px solid #000a;
+  border-top: none;
+  border-right: none;
+  width: fit-content;
+  height: 100px;
+  padding: 5px 100px 5px 10px;
+  border-bottom-left-radius: 15px;
+  opacity: 0;
+  transition: opacity var(--conf);
+  animation: wIntro 200ms 200ms ease forwards;
+
+  img {
+    float: left;
+  }
+
+  .txt {
+    float: right;
+
+    .desc {
+      font-weight: bold;
+    }
+
+    .time {
+      .colon {
+        animation: colon 2s steps(1, end) 0s forwards infinite;
+      }
+      .tz {
+        font-size: 22px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+@keyframes colon {
+  0%,100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes wIntro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

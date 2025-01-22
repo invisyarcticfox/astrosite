@@ -1,5 +1,8 @@
 ---
-export interface Props {
+import Back from '../components/_back.astro';
+import Footer from '../components/_footer.astro';
+
+interface Props {
 	meta: {
 		title: string;
 		metatitle: string;
@@ -12,56 +15,61 @@ const { meta } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/avatar.png" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/img/avatar.png' />
+		<meta name='generator' content={Astro.generator} />
 
-		<meta name="title" content={meta.metatitle} />
-		<meta name="description" content={meta.metadesc} />
-		<meta name="keywords" content="blender, animation, photography, sona art, furry, invisyarcticfox, invisy arcticfox" />
-		<meta name="image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png" />
-		<meta name="author" content="invisyarcticfox" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#00aa00" />
-		<meta name="robots" content="index, follow" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="language" content="English" />
-		<meta name="revisit-after" content="30 days" />
+		<meta name='title' content={meta.metatitle} />
+		<meta name='description' content={meta.metadesc} />
+		<meta name='keywords' content='blender, animation, photography, sona art, furry, invisyarcticfox, invisy arcticfox' />
+		<meta name='image' content='https://cdn.invisyarcticfox.uk/img/embedbanner.png' />
+		<meta name='author' content='invisyarcticfox' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<meta name='theme-color' content='#00aa00' />
+		<meta name='robots' content='index, follow' />
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<meta name='language' content='English' />
+		<meta name='revisit-after' content='30 days' />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={meta.metatitle} />
-		<meta property="og:description" content={meta.metadesc} />
-		<meta property="og:url" content={meta.metaurl} />
-		<meta property="og:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png" />
+		<meta property='og:type' content='website' />
+		<meta property='og:title' content={meta.metatitle} />
+		<meta property='og:description' content={meta.metadesc} />
+		<meta property='og:url' content={meta.metaurl} />
+		<meta property='og:image' content='https://cdn.invisyarcticfox.uk/img/embedbanner.png' />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@invisyarcticfox" />
-		<meta name="twitter:creator" content="@invisyarcticfox" />
-		<meta name="twitter:title" content={meta.metatitle} />
-		<meta name="twitter:description" content={meta.metadesc} />
-		<meta name="twitter:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png" />
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:site' content='@invisyarcticfox' />
+		<meta name='twitter:creator' content='@invisyarcticfox' />
+		<meta name='twitter:title' content={meta.metatitle} />
+		<meta name='twitter:description' content={meta.metadesc} />
+		<meta name='twitter:image' content='https://cdn.invisyarcticfox.uk/img/embedbanner.png' />
 		<title>{meta.title}</title>
 	</head>
 	<body>
+		<Back />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-	@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+	@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
-	html,
+	:root {
+		--conf: 200ms ease;
+	}
+
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		margin: 10px;
+		padding: 0;
+		font-family: 'Lexend', Arial, Helvetica, sans-serif;
 		background: #141414;
 		color: #fff;
-		font-family: "Lexend", Arial, Helvetica, sans-serif;
+		font-size: 25px;
 		scroll-behavior: smooth;
 	}
 </style>

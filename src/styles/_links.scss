@@ -1,0 +1,51 @@
+ul li a,
+ul li a:visited,
+ul li a:active,
+ul li a:focus {
+  color: #0080ff;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-left: 15px;
+
+  li {
+    margin: 2px 0;
+
+    a {
+      color: #0080ff;
+      text-decoration: none;
+      text-transform: capitalize;
+      letter-spacing: 0px;
+      transition:
+        color var(--conf),
+        letter-spacing var(--conf);
+      &:hover {
+        color: #9c30ff;
+        text-decoration: underline;
+        letter-spacing: 1px;
+        transition:
+          color var(--conf),
+          letter-spacing var(--conf);
+
+        svg {
+          transform: scale(1.25);
+          transition: transform var(--conf);
+        }
+      }
+
+      svg {
+        position: relative;
+        vertical-align: bottom;
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+        bottom: 5px;
+        margin-right: 5px;
+        transform: scale(1);
+        transition: transform var(--conf);
+      }
+    }
+  }
+}

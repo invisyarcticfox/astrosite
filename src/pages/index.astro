@@ -1,43 +1,53 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Box from "../components/Box.astro";
+import Layout from '../layouts/Layout.astro';
+import Links from '../components/links.astro';
+import Lanyard from '../components/lanyard.astro';
+import Weather from '../components/weather.astro';
+
+import { Image } from 'astro:assets';
+import '../styles/index.scss'
+import { social, ext } from '../vars/socialLinks'
+
 
 const meta = {
-	title: "invisyarcticfox/index",
-	metatitle: "invisyarcticfox.uk",
-	metadesc: "a gay fox that likes military aviation :3",
-	metaurl: "https://invisyarcticfox.uk",
+	title: 'invisyarcticfox/index',
+	metatitle: 'invisyarcticfox.uk',
+	metadesc: 'a gay fox that likes military aviation :3',
+	metaurl: 'https://invisyarcticfox.uk',
 };
-
-const links = [
-	{
-		href: "https://discord.com/users/470193291053498369",
-		icon: "discord"
-	},
-	{
-		href: "https://twitter.com/invisyarcticfox",
-		icon: "x",
-		label: "twitter" // id rather use twitter but simple-icons insists on using x :( looking at you adamrusted
-	},
-	{
-		href: "https://bsky.app/profile/invisyarcticfox.uk",
-		icon: "bluesky"},
-	{
-		href: "https://t.me/invisyarcticfox",
-		icon: "telegram"},
-	{
-		href: "https://www.last.fm/user/invisyarcticfox",
-		icon: "lastdotfm",
-		label: "lastfm",
-	},
-	{
-		href: "mailto:lucas@invisyarcticfox.uk",
-		icon: "maildotru",
-		label: "email", // i dont actually use mail.ru but it has a nice icon
-	},
-];
 ---
 
 <Layout meta={meta}>
-	<Box links={links} />
+	<Weather />
+	<div id='head'>
+		<h1>
+			<a href='./'>
+				<Image
+					src={'/img/avatar.png'}
+					alt={'avatar'}
+					class={'avatar'}
+					loading={'eager'}
+					decoding={'async'}
+					width={'128'}
+					height={'128'}
+					quality={'mid'}
+				/>https://invisyarcticfox.uk
+			</a>
+		</h1>
+		<span style='font-size: 22px;'>i am currently <b style='color: #80848E;'>offline</b>!</span>
+	</div>
+	<div class='links' style='width: 255px'>
+		<Links name='socials' links={social}/>
+		<Links name='ext' links={ext}/>
+	</div>
+	<Lanyard />
 </Layout>
+
+<style is:inline>
+	#back {
+		display: none !important;
+	}
+</style>
+
+<script src='/oneko.js' is:inline></script>
+<script type="text/javascript" src="https://cdn.pride.codes/js/codecorner.js" is:inline></script>
