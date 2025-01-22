@@ -1,0 +1,53 @@
+---
+import * as icons from 'simple-icons';
+import { iconPaths } from '../vars/iconPaths';
+import '../styles/_links.scss'
+
+interface Props {
+  name: string;
+  links: {
+    href: string;
+    icon: string;
+    svg?: string;
+    label?: string;
+    newTab?: boolean;
+  }[];
+}
+
+const { name, links } = Astro.props;
+
+const getIcon = (iconName: string) => {
+  const iconKey = `si${iconName.charAt(0).toUpperCase()}${iconName.slice(1)}`;
+  return icons[iconKey as keyof typeof icons] as Icon;
+};
+
+type Icon = {
+  path: string;
+  hex: string;
+};
+---
+
+<ul class={name}>
+  {
+    links.map((link) => {
+      const icon = getIcon(link.icon);
+      const pathData = link.svg ? iconPaths[link.svg] : icon.path;
+      const target = link.newTab !== false ? '_blank' : '';
+      const rel = target === '_blank' ? 'noopener noreferrer' : '';
+      if (!icon) {
+        console.warn(`Icon '${link.icon}' not found`);
+        return null;
+      }
+
+      return (
+        <li>
+          <a href={link.href} target={target} rel={rel}>
+            <svg viewBox='0 0 24 24'>
+              <path d={pathData} />
+            </svg>{link.label || link.icon}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro build && astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.2",
+    "astro": "^5.1.7",
     "dotenv": "^16.4.7",
     "octokit": "^4.0.3",
     "sass": "^1.83.1",
-    "simple-icons": "^14.2.0"
+    "simple-icons": "^14.3.0"
   }
 }

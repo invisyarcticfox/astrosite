@@ -1,0 +1,29 @@
+<div id="back">
+  <a href="./">back</a>
+</div>
+
+<style lang="scss">
+  #back {
+    position: fixed;
+    z-index: 99;
+    margin-left: -10px;
+    background: linear-gradient(90deg,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    a {
+      display: inline-block;
+      padding: 5px 50px 5px 25px;
+      width: 50px;
+      color: #0080ff;
+      text-decoration: none;
+      transition: width var(--conf), color var(--conf);
+      &:hover {
+        width: 75px;
+        color: #9c30ff;
+        text-decoration: underline;
+        transition: width var(--conf), color var(--conf);
+      }
+    }
+  }
+</style>

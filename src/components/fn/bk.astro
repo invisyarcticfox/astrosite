@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets'
+import skate1 from '../../imgs/fort/blackknight/skate1.png'
+import skate2 from '../../imgs/fort/blackknight/skate2.png'
+import skate3 from '../../imgs/fort/blackknight/skate3.png'
+import skate4 from '../../imgs/fort/blackknight/skate4.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography'
+
+interface Props {
+  size: number;
+  quality: number;
+}
+const { size, quality } = Astro.props
+---
+
+<div class='char bk'>
+  <a href={`${cdnUrl}/blackknight/big/skate1.png`} target='_blank' rel='noopener norefferer'><Image src={skate1} alt={'skate1.png'} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}/blackknight/big/skate2.png`} target='_blank' rel='noopener norefferer'><Image src={skate2} alt={'skate2.png'} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}/blackknight/big/skate3.png`} target='_blank' rel='noopener norefferer'><Image src={skate3} alt={'skate3.png'} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}/blackknight/big/skate4.png`} target='_blank' rel='noopener norefferer'><Image src={skate4} alt={'skate4.png'} width={size} height={size} quality={quality} loading={'eager'}/></a>
+</div>

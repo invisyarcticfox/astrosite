@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '../styles/fortography.scss'
+
+import Bk from '../components/fn/bk.astro';
+import Fenn from '../components/fn/fenn.astro';
+import Lw from '../components/fn/lw.astro';
+import Wend from '../components/fn/wend.astro';
+
+const meta = {
+	title: 'invisyarcticfox/fortography',
+	metatitle: 'invisyarcticfox.uk/fortography',
+	metadesc: 'my fortography. my fortnite photography..',
+	metaurl: 'https://invisyarcticfox.uk/fortography',
+};
+---
+
+<Layout meta={meta}>
+	<div id="cont">
+		<Bk 	size={512} quality={50}/>
+		<Fenn size={512} quality={50}/>
+		<Lw 	size={512} quality={50}/>
+		<Wend size={512} quality={50}/>
+	</div>
+</Layout>
+
+<style is:inline>
+	#cont {
+		padding-top: 50px;
+	}
+</style>
+
+<!-- wish i could do this better but astro is kinda annoying when it comes to importimg images n shit -->

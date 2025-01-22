@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import banana from '../../imgs/fort/fennix/banana.png'
+import blossom from '../../imgs/fort/fennix/blossom.png'
+import card from '../../imgs/fort/fennix/card.png'
+import claws from '../../imgs/fort/fennix/claws.png'
+import fist from '../../imgs/fort/fennix/fist.png'
+import fists from '../../imgs/fort/fennix/fists.png'
+import guitar1 from '../../imgs/fort/fennix/guitar1.png'
+import guitar2 from '../../imgs/fort/fennix/guitar2.png'
+import lightning from '../../imgs/fort/fennix/lightning.png'
+import peace from '../../imgs/fort/fennix/peace.png'
+import smug from '../../imgs/fort/fennix/smug.png'
+import wings from '../../imgs/fort/fennix/wings.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography/'
+
+interface Props {
+  size: number;
+  quality: number;
+}
+const { size, quality } = Astro.props
+---
+
+<div class='char fenn'>
+  <a href={`${cdnUrl}fennix/big/banana.png`}    target='_blank' rel='noopener norefferer'><Image src={banana}     alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/blossom.png`}   target='_blank' rel='noopener norefferer'><Image src={blossom}    alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/card.png`}      target='_blank' rel='noopener norefferer'><Image src={card}       alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/claws.png`}     target='_blank' rel='noopener norefferer'><Image src={claws}      alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/fist.png`}      target='_blank' rel='noopener norefferer'><Image src={fist}       alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/fists.png`}     target='_blank' rel='noopener norefferer'><Image src={fists}      alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/guitar1.png`}   target='_blank' rel='noopener norefferer'><Image src={guitar1}    alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/guitar2.png`}   target='_blank' rel='noopener norefferer'><Image src={guitar2}    alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/lightning.png`} target='_blank' rel='noopener norefferer'><Image src={lightning}  alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/peace.png`}     target='_blank' rel='noopener norefferer'><Image src={peace}      alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/smug.png`}      target='_blank' rel='noopener norefferer'><Image src={smug}       alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+  <a href={`${cdnUrl}fennix/big/wings.png`}     target='_blank' rel='noopener norefferer'><Image src={wings}      alt={''} width={size} height={size} quality={quality} loading={'eager'}/></a>
+</div>

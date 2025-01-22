@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets'
+import brite from '../../imgs/fort/wendell/brite.png'
+import fists from '../../imgs/fort/wendell/fists.png'
+import looking from '../../imgs/fort/wendell/looking.png'
+import nose from '../../imgs/fort/wendell/nose.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography/'
+
+interface Props {
+  size: number;
+  quality: number;
+}
+const { size, quality } = Astro.props
+---
+
+<div class="char fenn">
+  <a href={`${cdnUrl}wendell/big/brite.png`}    target="_blank" rel="noopener norefferer"><Image src={brite}    alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}wendell/big/fists.png`}    target="_blank" rel="noopener norefferer"><Image src={fists}    alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}wendell/big/looking.png`}  target="_blank" rel="noopener norefferer"><Image src={looking}  alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+  <a href={`${cdnUrl}wendell/big/nose.png`}     target="_blank" rel="noopener norefferer"><Image src={nose}     alt={''} width={size} height={size} quality={quality} loading={'lazy'}/></a>
+</div>

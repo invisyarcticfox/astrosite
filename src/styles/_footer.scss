@@ -1,0 +1,46 @@
+footer {
+  position: fixed;
+  font-size: 20px;
+  padding: 15px 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #141414aa;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  mask: linear-gradient(90deg,
+      rgba($color: #000, $alpha: 0) 25%,
+      rgba($color: #141414, $alpha: 1) 45%,
+      rgba($color: #141414, $alpha: 1) 65%,
+      rgba($color: #000, $alpha: 0) 85%,
+    );
+
+  div {
+    margin: 5px 0;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      width: 25px;
+      height: 25px;
+      margin: 0 3px;
+      &:hover {
+        svg,
+        img {
+          transform: scale(1.15);
+          transition: transform var(--conf);
+        }
+      }
+
+      svg,
+      img {
+        width: 25px;
+        height: 25px;
+        transform: scale(1);
+        transition: transform var(--conf);
+        vertical-align: bottom;
+      }
+    }
+  }
+}

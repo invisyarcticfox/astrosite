@@ -1,0 +1,26 @@
+---
+import * as icons from 'simple-icons';
+import '../styles/_footer.scss'
+---
+
+<footer>
+  <div>
+    made with
+    <a href='https://astro.build' target='_blank' rel='noopener noreferrer' aria-label='asto.build'>
+      <svg fill={`#${icons.siAstro.hex}`} viewBox='0 0 24 24'>
+        <path d={icons.siAstro.path}></path>
+      </svg>
+    </a><a href='https://simpleicons.org' target='_blank' rel='noopener noreferrer' aria-label='simpleicons.org'>
+      <svg fill='#fff' viewBox='0 0 24 24'>
+        <path d={icons.siSimpleicons.path}></path>
+      </svg>
+    </a><a href='https://github.com/Phineas/lanyard' target='_blank' rel='noopener noreferrer' aria-label='Phineas/lanyard'>
+      <img src='/img/lanyard.png' alt='lanyard' loading='eager' />
+    </a><a href='https://openweathermap.org' target='_blank' rel='noopener noreferrer' aria-label='openweathermap.org'>
+      <img src='/img/openweathermap.png' alt='openweathermap' loading='eager' />
+    </a>
+  </div>
+  <div>
+    -- invisyarcticfox {new Date().getFullYear()} --
+  </div>
+</footer>

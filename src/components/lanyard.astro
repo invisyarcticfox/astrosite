@@ -1,0 +1,109 @@
+---
+import '../styles/_lanyard.scss'
+---
+
+<div class='actcont'>
+  <div class='spotify'>
+    <img class='cover' src='' alt='' />
+    <span class='song'><b></b></span>
+    <span class='album dim'>
+      On
+      <i class="bright"></i>
+    </span>
+    <span class='artist dim'>
+      By
+      <i class="bright"></i>
+    </span>
+    <span class='links dim'>
+      On <a class='spotlink' target='_blank' rel='noopener noreferrer'>spotify</a>
+      -
+      On <a class='lastlink' target='_blank' rel='noopener noreferrer'>lastfm</a>
+    </span>
+  </div>
+</div>
+
+
+<script lang='js'>
+  const ws = new WebSocket('wss://lanyard.invisyarcticfox.uk/socket');
+  const spotifycont = document.querySelector('div.actcont .spotify');
+
+  ws.onopen = console.log('WebSocket open!');
+  ws.onmessage = ({ data: msg }) => {
+    try {
+      const data = JSON.parse(msg);
+      console.log(data);
+      switch (data.op) {
+        case 1:
+          ws.send(
+            JSON.stringify({
+              op: 2,
+              d: {
+                subscribe_to_id: '470193291053498369',
+              },
+            }),
+          );
+          setInterval(() => {
+            ws.send(
+              JSON.stringify({
+                op: 3,
+              }),
+            );
+          }, data.d.heartbeat_interval);
+          break;
+      }
+
+      updateDiscordStatus(data.d.discord_status);
+
+      switch (data.d.listening_to_spotify) {
+        case true:
+          spotifycont.style.visibility = 'visible';
+          spotifycont.style.opacity = '1';
+          updateSpotifyDetails(data.d.spotify);
+          break;
+        case false:
+          spotifycont.style.visibility = 'hidden';
+          spotifycont.style.opacity = '0';
+          break;
+        default:
+          spotifycont.style.visibility = 'hidden';
+          spotifycont.style.opacity = '0';
+          break;
+      }
+    } catch (error) {
+      console.error('Error processing WebSocket message:', error.message);
+    }
+  };
+</script>
+
+<script lang='js'>
+  const statustxt = document.querySelector('div#head span b');
+  function updateDiscordStatus(status) {
+    const statusColors = {
+      online: '#23A55A',
+      idle: '#F0B232',
+      dnd: '#F23F43',
+      offline: '#80848E',
+    };
+    statustxt.innerHTML = status || 'offline';
+    statustxt.style.color = statusColors[status] || '#80848E';
+  }
+
+  const spotify = {
+    albumcover: document.querySelector('.spotify img.cover'),
+    songtitle: document.querySelector('.spotify .song b'),
+    albumtitle: document.querySelector('.spotify .album i'),
+    artisttitle: document.querySelector('.spotify .artist i'),
+    spotlink: document.querySelector('.spotify .links .spotlink'),
+    lastlink: document.querySelector('.spotify .links .lastlink')
+  };
+  function updateSpotifyDetails(spotifyData) {
+    if (spotifyData) {
+      spotify.albumcover.src = spotifyData.album_art_url || '/img/cover.png';
+      spotify.songtitle.innerHTML = spotifyData.song;
+      spotify.albumtitle.innerHTML = spotifyData.album;
+      spotify.artisttitle.innerHTML = spotifyData.artist.split(';')[0];
+      spotify.spotlink.href = `https://open.spotify.com/track/${spotifyData.track_id}`
+      spotify.lastlink.href = `https://last.fm/music/${encodeURIComponent(spotifyData.artist.split(';')[0])}/_/${encodeURIComponent(spotifyData.song)}`
+    }
+  }
+</script>
