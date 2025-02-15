@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import Links from '../components/Links.astro'
+import SocialLinks from '../components/SocialLinks.astro'
+
+import avt from '../assets/avatar.png'
+import spintext from '../assets/3d.webm'
+import '../styles/index/index.scss'
+import * as link from '../links';
+---
+
+<Layout>
+	<div id="cont">
+		<Image
+			class='avt' src={avt} alt='avt'
+			width={256} height={256}
+			loading={'eager'} quality={'high'}
+		/>
+		<div id="info">
+			<div class="fn">Lucas.</div>
+			<div class="un">@invisyarcticfox</div>
+			<div class="desc">
+				<video src={spintext} autoplay loop muted/>
+				"animator", video editor, photographer
+			</div>
+		</div>
+		<SocialLinks links={link.social} />
+		<Links links={link.art} head='My Arts'/>
+		<Links links={link.misc} head='Other Stuff'/>
+	</div>
+	<script src="../scripts/lanyard.js"></script>
+</Layout>

@@ -1,0 +1,49 @@
+@use '../extras';
+
+
+#links {
+  padding: 10px 10px 0;
+
+  .head {
+    font-weight: bold;
+    font-size: 22px;
+    color: extras.$ctp-text;
+  }
+
+  .link {
+    display: flex;
+    width: 350px;
+    margin: 10px auto;
+    border-radius: 15px;
+    background: #389d2f;
+    color: extras.$ctp-text;
+    text-transform: capitalize;
+    @include extras.transition(background, width);
+    &:hover {
+      background: #2a7623;
+      width: 380px;
+    }
+    
+    a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: inherit;
+      align-items: center;
+      justify-content: center;
+      &:has(svg) {
+        padding-left: 32px;
+      }
+      
+      svg {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        margin-left: 2px;
+        top: -1px;
+      }
+    }
+  }
+}

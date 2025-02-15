@@ -1,0 +1,122 @@
+---
+interface Props {
+	metatitle?: string;
+	metaurl?: string;
+}
+
+const {
+	metatitle = "invisyarcticfox.uk",
+	metaurl = "https://invisyarcticfox.uk"
+} = Astro.props
+
+import { siAstro } from 'simple-icons';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{metatitle}</title>
+		<meta name="title" content={metatitle}>
+		<meta name="description" content="a gay fox that likes military aviation :3">
+		<meta name="keywords" content="blender, animation, photography, sona art, furry, invisyarcticfox, invisy arcticfox">
+		<meta name="image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+		<meta name="author" content="invisyarcticfox">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#00aa00">
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="English">
+		<meta name="revisit-after" content="30 days">
+
+		<meta property="og:type" content="website">
+		<meta property="og:title" content={metatitle}>
+		<meta property="og:description" content="a gay fox that likes military aviation :3">
+		<meta property="og:url" content={metaurl}>
+		<meta property="og:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@invisyarcticfox">
+		<meta name="twitter:creator" content="@invisyarcticfox">
+		<meta name="twitter:title" content={metaurl}>
+		<meta name="twitter:description" content="a gay fox that likes military aviation :3">
+		<meta name="twitter:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
+	</head>
+	<body>
+		<slot />
+		<footer>
+			<span>
+				<a href="https://astro.build" target="_blank" rel="noopener noreferrer">
+					<svg viewBox="0 0 24 24">
+						<path d={siAstro.path}/>
+					</svg></a>
+			</span>
+			|
+			<span>
+				<a href="https://simpleicons.org" target="_blank" rel="noopener noreferrer">simple icons</a>,
+			</span>
+			<span>
+				<a href="https://github.com/phineas/lanyard" target="_blank" rel="noopener noreferrer">lanyard</a>
+			</span>
+			|
+			<span><b>invisyarcticfox {new Date().getFullYear()}</b></span>
+		</footer>
+	</body>
+</html>
+
+<style is:global lang="scss">
+	::selection {
+		background: #fff;
+		color: #000;
+	}
+	$ctp-crust: #11111b;
+	$ctp-text: #cdd6f4;
+	$ctp-subtext0: #a6adc8;
+	$ctp-subtext1: #9399b2;
+
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		background: $ctp-crust;
+		color: $ctp-text;
+		font-size: 20px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	footer {
+    position: fixed;
+		font-size: 18px;
+    left: 20px;
+    bottom: 15px;
+    width: max-content;
+    color: $ctp-text;
+    text-align: left;
+		a {
+    	color: $ctp-text;
+    	text-decoration: none;
+			text-transform: capitalize;
+    	transition: color 200ms ease;
+			&:hover {
+				color: $ctp-subtext1;
+				text-decoration: underline;
+				svg {
+					fill: $ctp-subtext1;
+				}
+			}
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: $ctp-text;
+				vertical-align: middle;
+				transition: fill 200ms ease;
+			}
+		}
+	}
+</style>

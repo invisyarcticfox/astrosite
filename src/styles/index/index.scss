@@ -1,0 +1,51 @@
+@use '../extras';
+
+
+#cont {
+  display: block;
+  margin: 30px auto 20px;
+  width: 50vw;
+  text-align: center;
+  img.avt {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    border: 5px solid extras.$offline;
+    @include extras.transition(border-radius, border-color);
+    &:hover {
+      border-radius: 25%;
+      cursor: grabbing;
+    }
+
+    &.online { border-color: extras.$online;}
+    &.idle { border-color: extras.$idle;}
+    &.dnd { border-color: extras.$dnd;}
+    &.offline { border-color: extras.$offline;}
+  }
+}
+
+
+#info {
+  margin-top: 10px;
+  font-size: 25px;
+  color: extras.$ctp-subtext1;
+  .fn {
+    color: extras.$ctp-text;
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .desc {
+    color: extras.$ctp-subtext0;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin-top: 5px;
+    video {
+      vertical-align: text-bottom;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
