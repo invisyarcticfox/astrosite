@@ -1,0 +1,34 @@
+@use './extras';
+
+
+div#cont {
+  width: 95vw;
+  display: block;
+  margin: 25px auto 75px;
+
+  div.char {
+    display: flex;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    a {
+      --m: 5px;
+      display: flex;
+      margin: var(--m);
+      width: calc((100% / 4) - calc(var(--m) * 2));
+      filter: brightness(100%);
+      @include extras.transition(filter);
+      &:hover {
+        filter: brightness(75%);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

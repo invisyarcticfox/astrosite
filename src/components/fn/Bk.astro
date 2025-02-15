@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import skate1 from '../../assets/fort/blackknight/skate1.png'
+import skate2 from '../../assets/fort/blackknight/skate2.png'
+import skate3 from '../../assets/fort/blackknight/skate3.png'
+import skate4 from '../../assets/fort/blackknight/skate4.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography'
+import '../../styles/fn.scss'
+---
+
+<div class='char bk'>
+  <a href={`${cdnUrl}/blackknight/big/skate1.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={skate1} alt={'skate1.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'eager'}
+    />
+  </a>
+  <a href={`${cdnUrl}/blackknight/big/skate2.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={skate2} alt={'skate2.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'eager'}
+    />
+  </a>
+  <a href={`${cdnUrl}/blackknight/big/skate3.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={skate3} alt={'skate3.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'eager'}
+    />
+  </a>
+  <a href={`${cdnUrl}/blackknight/big/skate4.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={skate4} alt={'skate4.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'eager'}
+    />
+  </a>
+</div>

@@ -8,7 +8,7 @@ export const social = [
 
 export const art = [
 	{ href: 'https://instagram.com/lucasm.photography', label: 'photography', isExt: true },
-	{ href: './fortogprahy', label: 'fortography' },
+	{ href: './fortography', label: 'fortography' },
 	{ href: './animations', label: 'animations' },
 ]
 

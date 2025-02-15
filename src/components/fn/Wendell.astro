@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import brite from '../../assets/fort/wendell/brite.png'
+import fists from '../../assets/fort/wendell/fists.png'
+import looking from '../../assets/fort/wendell/looking.png'
+import nose from '../../assets/fort/wendell/nose.png'
+const cdnUrl = 'https://cdn.invisyarcticfox.uk/fortography'
+import '../../styles/fn.scss'
+---
+
+<div class='char bk'>
+  <a href={`${cdnUrl}/wendell/big/brite.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={brite} alt={'brite.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'lazy'}
+    />
+  </a>
+  <a href={`${cdnUrl}/wendell/big/fists.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={fists} alt={'fists.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'lazy'}
+    />
+  </a>
+  <a href={`${cdnUrl}/wendell/big/looking.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={looking} alt={'looking.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'lazy'}
+    />
+  </a>
+  <a href={`${cdnUrl}/wendell/big/nose.png`} target='_blank' rel='noopener norefferer'>
+    <Image
+      src={nose} alt={'nose.png'}
+      width={480} height={270}
+      quality={'mid'} loading={'lazy'}
+    />
+  </a>
+</div>

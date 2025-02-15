@@ -1,0 +1,143 @@
+@use './extras';
+
+
+#cont {
+  display: block;
+  margin: 30px auto 20px;
+  width: 50vw;
+  text-align: center;
+  img.avt {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    border: 5px solid extras.$offline;
+    @include extras.transition(border-radius, border-color);
+    &:hover {
+      border-radius: 25%;
+      cursor: grabbing;
+    }
+
+    &.online { border-color: extras.$online;}
+    &.idle { border-color: extras.$idle;}
+    &.dnd { border-color: extras.$dnd;}
+    &.offline { border-color: extras.$offline;}
+  }
+}
+
+#info {
+  margin-top: 10px;
+  font-size: 25px;
+  color: extras.$ctp-subtext1;
+  .fn {
+    color: extras.$ctp-text;
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .desc {
+    color: extras.$ctp-subtext0;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin-top: 5px;
+    video {
+      vertical-align: text-bottom;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+#social {
+  display: flex;
+  margin: 5px auto 10px;
+  height: var(--sz);
+  text-decoration: none;
+  position: relative;
+  top: -10px;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    width: var(--sz);
+    height: var(--sz);
+    &::before {
+      content: attr(data-socialname);
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 5px;
+      color: extras.$ctp-subtext1;
+      background: extras.$ctp-mantle;
+      padding: 2px;
+      position: relative;
+      display: block;
+      opacity: 0;
+      transform: scale(0) translateY(25px);
+      @include extras.transition(opacity, transform);
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: scale(2.5) translateY(-5px);
+      }
+
+      svg {
+        transform: scale(1.25);
+      }
+    }
+
+    svg {
+      vertical-align: middle;
+      transform: scale(1);
+      @include extras.transition(transform);
+    }
+  }
+}
+
+#links {
+  padding: 10px 10px 0;
+
+  .head {
+    font-weight: bold;
+    font-size: 22px;
+    color: extras.$ctp-text;
+  }
+
+  .link {
+    display: flex;
+    width: 350px;
+    margin: 10px auto;
+    border-radius: 15px;
+    background: #389d2f;
+    color: extras.$ctp-text;
+    text-transform: capitalize;
+    @include extras.transition(background, width);
+    &:hover {
+      background: #2a7623;
+      width: 380px;
+    }
+    
+    a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: inherit;
+      align-items: center;
+      justify-content: center;
+      &:has(svg) {
+        padding-left: 32px;
+      }
+      
+      svg {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        margin-left: 2px;
+        top: -1px;
+      }
+    }
+  }
+}
