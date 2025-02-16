@@ -4,6 +4,20 @@
   transition-timing-function: ease;
 }
 
+@keyframes animUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0);
+  }
+}
+
+
 $online: #23A55A;
 $idle: #F0B232;
 $dnd: #F23F43;

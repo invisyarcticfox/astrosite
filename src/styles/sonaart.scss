@@ -1,0 +1,39 @@
+@use './extras';
+
+
+#cont {
+  width: 95vw;
+  margin: 50px auto 75px;
+  font-size: 0;
+
+  .art {
+    display: inline-block;
+    width: calc((100% / 3) - (5px * 3));
+    vertical-align: middle;
+    margin: 0 5px;
+    opacity: 0;
+    animation: animUp 1s var(--d) forwards ease;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
+
+    .artist {
+      background: color-mix(in srgb, extras.$ctp-mantle 95%, transparent);
+      font-size: 25px;
+      padding: 5px 10px 7px;
+
+      a {
+        text-decoration: none;
+        color: extras.$ctp-text;
+        @include extras.transition(color);
+        &:hover {
+          color: extras.$ctp-overlay2;
+        }
+      }
+    }
+  }
+}

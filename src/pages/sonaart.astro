@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SonaArt from '../components/SonaArt.astro';
+import '../styles/sonaart.scss';
+import artData from '../artData.json';
+---
+
+<Layout>
+  <div id='cont'>
+    {
+      artData.map((art) => (
+        <SonaArt
+          file={art.file}
+          artist={art.artist}
+          date={art.date}
+          egrLd={art.egrLd || false}
+        />
+      ))
+    }
+  </div>
+  <script lang='js'>
+    const container = document.querySelector('#cont');
+    const imgs = container.querySelectorAll('div.art');
+    imgs.forEach((img, index) => {
+      const delay = ((index + 1) * 0.2).toFixed(1);
+      img.style.setProperty('--d', `${delay}s`);
+    });
+  </script>
+</Layout>

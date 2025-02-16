@@ -1,13 +1,9 @@
 ---
 interface Props {
 	metatitle?: string;
-	metaurl?: string;
 }
 
-const {
-	metatitle = "invisyarcticfox.uk",
-	metaurl = "https://invisyarcticfox.uk"
-} = Astro.props
+const { metatitle = "invisyarcticfox.uk" } = Astro.props
 
 import { siAstro } from 'simple-icons';
 ---
@@ -36,13 +32,13 @@ import { siAstro } from 'simple-icons';
 		<meta property="og:type" content="website">
 		<meta property="og:title" content={metatitle}>
 		<meta property="og:description" content="a gay fox that likes military aviation :3">
-		<meta property="og:url" content={metaurl}>
+		<meta property="og:url" content={Astro.url}>
 		<meta property="og:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@invisyarcticfox">
 		<meta name="twitter:creator" content="@invisyarcticfox">
-		<meta name="twitter:title" content={metaurl}>
+		<meta name="twitter:title" content={Astro.url}>
 		<meta name="twitter:description" content="a gay fox that likes military aviation :3">
 		<meta name="twitter:image" content="https://cdn.invisyarcticfox.uk/img/embedbanner.png">
 	</head>
@@ -54,13 +50,6 @@ import { siAstro } from 'simple-icons';
 					<svg viewBox="0 0 24 24">
 						<path d={siAstro.path}/>
 					</svg></a>
-			</span>
-			|
-			<span>
-				<a href="https://simpleicons.org" target="_blank" rel="noopener noreferrer">simple icons</a>,
-			</span>
-			<span>
-				<a href="https://github.com/phineas/lanyard" target="_blank" rel="noopener noreferrer">lanyard</a>
 			</span>
 			|
 			<span><b>invisyarcticfox {new Date().getFullYear()}</b></span>
@@ -96,23 +85,15 @@ import { siAstro } from 'simple-icons';
     left: 0;
     bottom: 0;
     width: max-content;
-		padding: 15px 20px;
+		padding: 15px 20px 10px;
 		background: color-mix(in srgb, $ctp-crust 75%, transparent);
 		backdrop-filter: blur(5px);
 		border-top-right-radius: 25px;
     color: $ctp-text;
     text-align: left;
 		a {
-    	color: $ctp-text;
-    	text-decoration: none;
-			text-transform: capitalize;
-    	transition: color 200ms ease;
-			&:hover {
-				color: $ctp-subtext1;
-				text-decoration: underline;
-				svg {
-					fill: $ctp-subtext1;
-				}
+			&:hover svg {
+				fill: $ctp-subtext1;
 			}
 			svg {
 				width: 20px;

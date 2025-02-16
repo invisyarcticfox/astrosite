@@ -109,12 +109,12 @@
     width: 350px;
     margin: 10px auto;
     border-radius: 15px;
-    background: #389d2f;
+    background: color-mix(in srgb, extras.$ctp-green 15%, #1a1 80%);
     color: extras.$ctp-text;
     text-transform: capitalize;
     @include extras.transition(background, width);
     &:hover {
-      background: #2a7623;
+      background: color-mix(in srgb, extras.$ctp-green 5%, #0a0 80%);
       width: 380px;
     }
     

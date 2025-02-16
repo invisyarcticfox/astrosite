@@ -1,0 +1,61 @@
+[
+  {
+    "file": "eutubday.png",
+    "date": "4th May 2024",
+    "egrLd": true,
+    "artist": {
+      "name": "eutumned",
+      "url": "https://eutumned.carrd.co/"
+    }
+  },
+  {
+    "file": "eutuduo.png",
+    "date": "30th May 2024",
+    "egrLd": true,
+    "artist": {
+      "name": "eutumned",
+      "url": "https://eutumned.carrd.co/"
+    }
+  },
+  {
+    "file": "eutuhead.png",
+    "date": "26th Mar 2023",
+    "egrLd": true,
+    "artist": {
+      "name": "eutumned",
+      "url": "https://eutumned.carrd.co/"
+    }
+  },
+  {
+    "file": "hrbananabird.jpg",
+    "date": "27th Sep 2023",
+    "artist": {
+      "name": "hr_bananabird",
+      "url": "https://hr-bananabird.carrd.co/"
+    }
+  },
+  {
+    "file": "marrson.png",
+    "date": "24th Aug 2020",
+    "artist": {
+      "name": "LarrsonMarrson",
+      "url": "https://twitter.com/LarrsonMarrson/"
+    }
+  },
+  {
+    "file": "creep.jpg",
+    "date": "3rd Sep 2023",
+    "artist": {
+      "name": "SugarDcreep",
+      "url": "https://twitter.com/SugarDcreep/"
+    }
+  },
+  {
+    "file": "vipi.jpg",
+    "date": "17th Mar 2021",
+    "artist": {
+      "name": "vipibolt",
+      "url": "https://twitter.com/vipibolt/"
+    }
+  }
+]
