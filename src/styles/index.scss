@@ -41,12 +41,12 @@
     text-transform: capitalize;
     font-size: 22px;
     margin-top: 5px;
-    video {
+    img {
       vertical-align: text-bottom;
       width: 25px;
       height: 25px;
       position: relative;
-      top: -1px;
+      bottom: 1px;
     }
   }
 }

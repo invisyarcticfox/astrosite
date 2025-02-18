@@ -66,6 +66,9 @@ import { siAstro } from 'simple-icons';
 	$ctp-text: #cdd6f4;
 	$ctp-subtext0: #a6adc8;
 	$ctp-subtext1: #9399b2;
+	$ctp-overlay2: #9399b2;
+	$ctp-overlay1: #7f849c;
+	$ctp-overlay0: #6c7086;
 
 	html {
 		scroll-behavior: smooth;
@@ -77,6 +80,13 @@ import { siAstro } from 'simple-icons';
 		color: $ctp-text;
 		font-size: 20px;
 		font-family: Arial, Helvetica, sans-serif;
+	}
+	a {
+		color: $ctp-text;
+		transition: color 200ms ease;
+		&:hover {
+			color: $ctp-overlay2;
+		}
 	}
 
 	footer {

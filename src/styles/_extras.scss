@@ -4,6 +4,14 @@
   transition-timing-function: ease;
 }
 
+@mixin imgpos($pos) {
+  position: relative;
+  vertical-align: middle;
+  bottom: $pos;
+  margin: 0 2px;;
+}
+
+
 @keyframes animUp {
   from {
     opacity: 0;

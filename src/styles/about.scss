@@ -1,0 +1,52 @@
+@use './extras';
+
+
+#cont {
+  width: 40vw;
+  margin: 0 auto;
+  font-size: 23px;
+  margin-top: 25px;
+
+  h2 {
+    font-size: 34px;
+    margin: 5px 0 7px;
+    img {
+      left: 4px;
+      @include extras.imgpos(6px);
+    }
+  }
+  h3 {
+    margin: 25px 0 7px;
+  }
+
+  p {
+    margin: 5px 0;
+    &:not(.ex)::first-letter {
+      text-transform: capitalize;
+    }
+    svg {
+      @include extras.imgpos(3px);
+      fill: #fff;
+    }
+  }
+}
+
+
+.sc {
+  display: flex;
+  align-items: center;
+  background-color: extras.$ctp-base;
+  padding: 10px;
+  margin: 10px 0 !important;
+  width: 95%;
+  .txt {
+    flex: 1;
+    padding-right: 5px;
+  }
+  
+  img {
+    width: 175px;
+    height: auto;
+  }
+  
+}
