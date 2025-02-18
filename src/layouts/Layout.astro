@@ -44,6 +44,7 @@ import { siAstro } from 'simple-icons';
 		<meta name='twitter:image' content='https://cdn.invisyarcticfox.uk/img/embedbanner.png'>
 	</head>
 	<body>
+		<div id="back"><a href="./">back</a></div>
 		<slot />
 		<footer>
 			<span>
@@ -59,17 +60,16 @@ import { siAstro } from 'simple-icons';
 </html>
 
 <style is:global lang='scss'>
+
 	::selection {
 		background: #fff;
 		color: #000;
 	}
 	$ctp-crust: #11111b;
 	$ctp-text: #cdd6f4;
-	$ctp-subtext0: #a6adc8;
 	$ctp-subtext1: #9399b2;
 	$ctp-overlay2: #9399b2;
-	$ctp-overlay1: #7f849c;
-	$ctp-overlay0: #6c7086;
+	$ctp-surface0: #313244;
 
 	html {
 		scroll-behavior: smooth;
@@ -88,6 +88,21 @@ import { siAstro } from 'simple-icons';
 		&:hover {
 			color: $ctp-overlay2;
 		}
+	}
+
+	#back {
+  	position: fixed;
+  	width: 50px;
+		font-size: 22px;
+  	background: rgb(255, 255, 255);
+  	background: linear-gradient(90deg, $ctp-surface0 50%, $ctp-crust 100%);
+		color: $ctp-text;
+  	padding: 5px 50px 5px 15px;
+  	transition: width .2s ease;
+  	z-index: 100;
+	}
+	#back:hover {
+  	width: 75px;
 	}
 
 	footer {
