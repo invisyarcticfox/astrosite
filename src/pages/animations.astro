@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Anims from "../components/Anims.astro"
-import { Image } from "astro:assets"
+import Layout from '../layouts/Layout.astro'
+import Anims from '../components/Anims.astro'
+import { Image } from 'astro:assets'
 import '../styles/anims.scss'
 
 import countdown from '../assets/anims/invisy/countdown.mp4'
@@ -17,29 +17,29 @@ import light2 from '../assets/anims/mixamo/light2.png'
 import light3 from '../assets/anims/mixamo/light3.png'
 ---
 
-<Layout>
-  <div id="cont">
-    <Anims width="50%" vid={marsh} title="marshmellow"
-      note="reference video" link="https://www.youtube.com/watch?v=8jgzzjOTWFw"
+<Layout metatitle='animations'>
+  <div id='cont'>
+    <Anims width='50%' vid={marsh} title='marshmellow'
+      note='reference video' link='https://www.youtube.com/watch?v=8jgzzjOTWFw'
     />
-    <Anims width="50%" vid={newmovie} title="new movie"
-      note="audio source" link="https://www.youtube.com/watch?v=AuJE2bXK45E"
+    <Anims width='50%' vid={newmovie} title='new movie'
+      note='audio source' link='https://www.youtube.com/watch?v=AuJE2bXK45E'
     />
-    <Anims width="50%" vid={sauce} title="worcestershire sauce"
-      note="audio source" link="https://www.youtube.com/watch?v=IBOgzOhfny4"
+    <Anims width='50%' vid={sauce} title='worcestershire sauce'
+      note='audio source' link='https://www.youtube.com/watch?v=IBOgzOhfny4'
     />
-    <Anims width="75%" vid={countdown} title="nuts and bolts"
-      note="reference video" link="https://www.youtube.com/watch?v=dbCOStXbYo8"
+    <Anims width='75%' vid={countdown} title='nuts and bolts'
+      note='reference video' link='https://www.youtube.com/watch?v=dbCOStXbYo8'
     />
-    <Anims width="75%" vid={chase} title="car chase" muted/>
+    <Anims width='75%' vid={chase} title='car chase' muted/>
 
-    <div class="divider"></div>
-    <div class="note">model and animations from <a href="https://www.mixamo.com">mixamo.com</a></div>
-    <div class="item">
-      <video src={mixfhh} controls width="49%" muted />
-      <video src={mixfpov} controls width="49%" muted />
+    <div class='divider'></div>
+    <div class='note'>model and animations from <a href='https://www.mixamo.com'>mixamo.com</a></div>
+    <div class='item'>
+      <video src={mixfhh} controls width='49%' muted />
+      <video src={mixfpov} controls width='49%' muted />
     </div>
-    <div class="item mix">
+    <div class='item mix'>
       <Image src={light1} alt={''} width={720} height={1280} quality={'max'}/>
       <Image src={light2} alt={''} width={720} height={1280} quality={'max'}/>
       <Image src={light3} alt={''} width={720} height={1280} quality={'max'}/>

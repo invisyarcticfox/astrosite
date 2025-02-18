@@ -1,65 +1,66 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import ImgShow from "../components/ImgShow.astro";
-import "../styles/about.scss";
-const imgsz = 240
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import '../styles/about.scss';
+const imgsz = 240;
 
-import wave from "../assets/about/wave.gif";
+import wave from '../assets/about/wave.gif';
 import camera from '../assets/about/lumix-dcfz82.png'
 import mic from '../assets/about/maono-aua04.png'
 import mouse from '../assets/about/logitech-g502hero.png'
 ---
 
-<Layout>
-  <div id="cont">
-    <h2>Hi<Image src={wave} alt={"wave"} height={30} loading={"eager"} /></h2>
-    <p>my name is <b>Lucas</b>, but i use the username *<b title="or variations of it">@invisyarcticfox</b></p>
-    <p>i am *<b class="age" title="4th May">00</b> years old and living in the <b>United Kingdom</b></p>
+<Layout metatitle='about'>
+  <div id='cont'>
+    <h2>Hi<Image src={wave} alt={'wave'} height={30} loading={'eager'} /></h2>
+    <p>my name is <b>Lucas</b>, but i use the username *<b title='or variations of it'>@invisyarcticfox</b></p>
+    <p>i am *<b class='age' title='4th May'>00</b> years old and living in the <b>United Kingdom</b></p>
     <p>
       i like to do animations using
-      <a href="https://blender.org" target="_blank" rel="noopener noreferrer">Blender</a>,
+      <a href='https://blender.org' target='_blank' rel='noopener noreferrer'>Blender</a>,
       and i also like to take pictures of things, mostly planes and the moon
     </p>
-    <ImgShow>
-      <div slot="txt" class="txt">
+
+    <div class="sc">
+      <div slot='txt' class='txt'>
         <p>this is the camera i use, the <b>Lumix DC-FZ82</b></p>
         <p>for what it was worth (<b>~£200</b>) it's not too bad</p>
-        <p>its not <i>"professional"</i>, but it works for what i do</p>
+        <p>its not <i>'professional'</i>, but it works for what i do</p>
       </div>
-      <Image src={camera} alt={'camera'} height={imgsz} loading={'eager'} slot="img"/>
-    </ImgShow>
+      <Image src={camera} alt={'camera'} height={imgsz} loading={'eager'} slot='img'/>
+    </div>
+
     <p>
       i also like to edit videos sometimes. i mainly use
-      <a href="https://www.vegascreativesoftware.com/vegas-pro/" target="_blank" rel="noopener noreferrer">Vegas Pro 20</a>,
+      <a href='https://www.vegascreativesoftware.com/vegas-pro/' target='_blank' rel='noopener noreferrer'>Vegas Pro 20</a>,
       but I do want to learn
-      <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer">Davinci Resolve</a>.
-      i also use <a href="https://gimp.org">GIMP</a> to edit pictures
+      <a href='https://www.blackmagicdesign.com/products/davinciresolve' target='_blank' rel='noopener noreferrer'>Davinci Resolve</a>.
+      i also use <a href='https://gimp.org'>GIMP</a> to edit pictures
     </p>
-    
-    <ImgShow>
-      <div slot="txt" class="txt">
+
+    <div class="sc">
+      <div slot='txt' class='txt'>
         <p>my microphone as a <b>maono au-a04</b></p>
         <p>it too is pretty good. was <b>~£200</b> too</p>
         <p>it sounds good and thats all i really care about</p>
-        <p>although, i do run it through <a href="https://www.reaper.fm/" target="_blank" rel="noopener noreferrer">REAPER</a></p>
-        <p class="ex">just to make it sound just a little better</p>
+        <p>although, i do run it through <a href='https://www.reaper.fm/' target='_blank' rel='noopener noreferrer'>REAPER</a></p>
+        <p class='ex'>just to make it sound just a little better</p>
       </div>
-      <Image src={mic} alt={'mic'} height={imgsz} loading={'eager'} slot="img"/>
-    </ImgShow>
+      <Image src={mic} alt={'mic'} height={imgsz} loading={'eager'} slot='img'/>
+    </div>
 
-    <ImgShow>
-      <div slot="txt" class="txt">
+    <div class="sc">
+      <div slot='txt' class='txt'>
         <p>and my mouse is the classic <b>Logitech G502 Hero</b></p>
         <p>i like the side buttons and the way it feels</p>
         <p>and how customisable it is in Ghub</p>
         <p><i><b>#NotSponsored</b></i></p>
       </div>
-      <Image src={mouse} alt={'mouse'} height={imgsz} loading={'eager'} slot="img"/>
-    </ImgShow>
+      <Image src={mouse} alt={'mouse'} height={imgsz} loading={'eager'} slot='img'/>
+    </div>
 
     <h3>PC Specs</h3>
-    <div style="margin-bottom: 100px;">
+    <div style='margin-bottom: 100px;'>
       <p>For my GPU i have a <b>NVIDIA 4070ti</b></p>
       <p>i have 32 gigs of <b>Kingston Fury</b> RAM</p>
       <p>i an <b>Intel SSDPEKNW 512G8</b> SSD and a <b>Crucial P3 1TB M.2</b></p>
@@ -69,4 +70,4 @@ import mouse from '../assets/about/logitech-g502hero.png'
   </div>
 </Layout>
 
-<script src="../scripts/age.js"></script>
+<script src='../scripts/age.js'></script>

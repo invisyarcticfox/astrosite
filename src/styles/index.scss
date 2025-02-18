@@ -103,6 +103,7 @@
 // the links
 #links {
   padding: 10px 10px 0;
+  text-transform: capitalize;
 
   .head {
     font-weight: bold;
@@ -117,7 +118,6 @@
     border-radius: 15px;
     background: extras.$ctp-surface2;
     color: extras.$ctp-text;
-    text-transform: capitalize;
     @include extras.transition(background, width);
     &:hover {
       background: extras.$ctp-surface0;

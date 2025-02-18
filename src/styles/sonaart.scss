@@ -28,11 +28,6 @@
 
       a {
         text-decoration: none;
-        color: extras.$ctp-text;
-        @include extras.transition(color);
-        &:hover {
-          color: extras.$ctp-overlay2;
-        }
       }
     }
   }

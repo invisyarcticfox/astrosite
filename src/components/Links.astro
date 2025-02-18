@@ -7,20 +7,20 @@ interface Props {
   links: {
     href: string;
     label: string;
-    isExt?: boolean
+    isExt?: boolean;
   }[]
 }
 
 const { links, head } = Astro.props
 ---
 
-<div id="links">
-  <div class="head">{head}</div>
+<div id='links'>
+  <div class='head'>{head}</div>
   {
     links.map((link) => {
       return (
-        <div class="link">
-          <a href={link.href} target={link.isExt ? '_blank' : undefined} rel="noopener noreferrer">
+        <div class='link'>
+          <a href={link.href} target={link.isExt ? '_blank' : undefined} rel='noopener noreferrer'>
             {link.label}
             {link.isExt && <ExternalLinkIcon />}
           </a>

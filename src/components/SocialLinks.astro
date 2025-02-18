@@ -2,6 +2,7 @@
 import '../styles/index.scss'
 import * as icn from 'simple-icons'
 
+
 interface Props {
   links: {
     href: string;
@@ -17,15 +18,15 @@ const icnGap = 20;
 const socWidth = `${(icnSize * linkCount) + (icnGap * (linkCount - 1))}px`
 ---
 
-<div id="social" style={{width: socWidth, '--sz': `${icnSize}px`, gap: `${icnGap}px`}}>
+<div id='social' style={{width: socWidth, '--sz': `${icnSize}px`, gap: `${icnGap}px`}}>
   {links.map((link) => {
     const iconName = link.icon ?? link.label;
     const iconKey = `si${iconName.charAt(0).toUpperCase()}${iconName.slice(1)}` as keyof typeof icn;
     const iconData = icn[iconKey] as unknown as { hex: string; path: string; };
   
     return iconData && iconData.path ? (
-      <a href={link.href} target="_blank" rel="noopener noreferrer" data-socialname={link.label}>
-        <svg viewBox="0 0 24 24">
+      <a href={link.href} target='_blank' rel='noopener noreferrer' data-socialname={link.label}>
+        <svg viewBox='0 0 24 24'>
           <path d={iconData.path} fill=`#${iconData.hex}`/>
         </svg>
       </a>

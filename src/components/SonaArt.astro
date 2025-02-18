@@ -16,15 +16,15 @@ const { file, artist, date, egrLd } = Astro.props;
 const fullPth = `/src/assets/art/${file}`
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/art/*.{jpeg,jpg,png}');
-if (!images[fullPth]) throw new Error(`"${fullPth}" does not exist in glob: "src/assets/art/*.{jpeg,jpg,png}"`);
+if (!images[fullPth]) throw new Error(`'${fullPth}' does not exist in glob: 'src/assets/art/*.{jpeg,jpg,png}'`);
 ---
-<div class="art">
+<div class='art'>
   <Image
     src={images[fullPth]()} alt={`@${artist.name} - ${file}`}
     height={1024} quality={'high'}
     loading={egrLd ? 'eager' : 'lazy'}
   />
-  <div class="artist">
+  <div class='artist'>
     <a href={artist.url}>@<u>{artist.name}</u></a>
     <span style={{fontStyle: 'italic', float: 'right'}}>{date}</span>
   </div>

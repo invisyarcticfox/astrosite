@@ -16,13 +16,6 @@
         animation-delay: #{$i * 0.2s};
       }
     }
-    a {
-      color: extras.$ctp-text;
-      @include extras.transition(color);
-      &:hover {
-        color: extras.$ctp-overlay2;
-      }
-    }
     .title {
       font-weight: bold;
       margin: 5px 0;

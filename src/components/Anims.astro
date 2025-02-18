@@ -11,8 +11,8 @@ interface Props {
 const { title, note, link, vid, width, muted } = Astro.props
 ---
 
-<div class="item">
-  <div class="title">{title}</div>
+<div class='item'>
+  <div class='title'>{title}</div>
   <video width={width} src={vid} controls muted={muted ? true : undefined}></video>
-  <div class="notes">{link && <a href={link}>{note}</a> }</div>
+  <div class='notes'>{link && <a href={link}>{note}</a> }</div>
 </div>

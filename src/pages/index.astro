@@ -11,24 +11,24 @@ import * as link from '../links';
 ---
 
 <Layout>
-	<div id="cont">
+	<div id='cont'>
 		<Image
 			class='avt' src={avt} alt='avt'
 			width={256} height={256}
 			loading={'eager'} quality={'high'}
 		/>
-		<div id="info">
-			<div class="fn">Lucas.</div>
-			<div class="un">@invisyarcticfox</div>
-			<div class="desc">
+		<div id='info'>
+			<div class='fn'>Lucas.</div>
+			<div class='un'>@invisyarcticfox</div>
+			<div class='desc'>
 				<Image src={spintext} alt={'spin3d'} loading={'eager'} width={25} height={25} />
-				"animator", video editor, photographer
+				'animator', video editor, photographer
 			</div>
 		</div>
 		<SocialLinks links={link.social} />
 		<Links links={link.art} head='My Arts'/>
 		<Links links={link.misc} head='Other Stuff'/>
 	</div>
-	<script src="../scripts/lanyard.js"></script>
-	<script src="/oneko.js" is:inline></script>
+	<script src='../scripts/lanyard.js'></script>
+	<script src='/oneko.js' is:inline></script>
 </Layout>

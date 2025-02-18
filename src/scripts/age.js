@@ -11,5 +11,5 @@ function calculateAge(dobString) {
   return age;
 }
 
-const dob = "2005-05-04";
+const dob = '2005-05-04';
 elem.innerHTML = calculateAge(dob)
