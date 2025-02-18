@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Links from "../components/Links.astro"
+import '../styles/index.scss'
+
+const links = [
+  {"label": "discord",     "href": "https://discord.com/users/470193291053498369"},
+  {"label": "twitter",     "href": "https://twitter.com/invisyarcticfox"},
+  {"label": "bluesky",     "href": "https://bsky.app/profile/invisyarcticfox.uk"},
+  {"label": "instagram",   "href": "https://www.instagram.com/lucas.mcq_"},
+  {"label": "telegram",    "href": "https://t.me/invisyarcticfox"},
+  {"label": "lastfm",      "href": "https://www.last.fm/user/invisyarcticfox"},
+  {"label": "steam",       "href": "https://steamcommunity.com/id/invisyarcticfox"},
+  {"label": "letterboxd",  "href": "https://boxd.it/8RngF"},
+  {"label": "spotify",     "href": "https://open.spotify.com/user/9xxqc084xppfcj99y2qcx17e5"},
+  {"label": "github",      "href": "https://github.com/invisyarcticfox"},
+  {"label": "youtube 1",   "href": "https://youtube.com/@invisyarcticfox"},
+  {"label": "youtube 2",   "href": "https://youtube.com/@invisyarcticfreak"},
+  {"label": "twitch",      "href": "https://twitch.tv/invisyarcticfox_"},
+  {"label": "fn.gg",       "href": "https://fortnite.gg/locker?id=1037612"},
+]
+---
+
+<Layout>
+  <div id="cont">
+    <div class="note">
+      <div style="font-weight: bold;">all social media accounts that i have.</div>
+      <div>obviously wanst going to list all of them on the index</div>
+      <div>but i wanted a place to just put all of my accounts</div>
+    </div>
+    <div class="divider"></div>
+    <Links head="" links={links} />
+</Layout>
+
+<style is:inline>
+  .note {
+    margin: 10px auto;
+  }
+  .divider {
+    margin: 15px auto;
+    width: 50%;
+    height: 3px;
+    background: #aaa;
+    border-radius: 25px;
+  }
+  #links .link {
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 400px;
+  }
+  #links .link:hover {
+    width: 430px;
+  }
+</style>
