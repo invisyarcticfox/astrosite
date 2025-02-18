@@ -1,0 +1,54 @@
+@use './extras';
+
+
+#cont {
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+  .item {
+    margin-bottom: 75px;
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        animation: animUp 1s forwards ease;
+        animation-delay: #{$i * 0.2s};
+      }
+    }
+    a {
+      color: extras.$ctp-text;
+      @include extras.transition(color);
+      &:hover {
+        color: extras.$ctp-overlay2;
+      }
+    }
+    .title {
+      font-weight: bold;
+      margin: 5px 0;
+      text-transform: capitalize;
+    }
+    video {
+      margin: 5px 0;
+    }
+    .notes {
+      margin-top: 5px;
+    }
+    &.mix img {
+      width: 32%;
+      height: auto;
+      aspect-ratio: 9/16;
+    }
+  }
+}
+
+.divider {
+  margin: -20px auto 10px;
+  width: 75%;
+  height: 3px;
+  background: #aaa;
+  border-radius: 25px;
+}
+.note {
+  margin-bottom: 20px;
+}

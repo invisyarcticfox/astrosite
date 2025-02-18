@@ -1,6 +1,7 @@
 @use './extras';
 
 
+// literally just the pfp
 #cont {
   display: block;
   margin: 30px auto 20px;
@@ -24,6 +25,7 @@
   }
 }
 
+// actual text
 #info {
   margin-top: 10px;
   font-size: 25px;
@@ -49,6 +51,7 @@
   }
 }
 
+// just those 4 icons
 #social {
   display: flex;
   margin: 5px auto 10px;
@@ -73,12 +76,14 @@
       position: relative;
       display: block;
       opacity: 0;
+      filter: blur(4px);
       transform: scale(0) translateY(25px);
-      @include extras.transition(opacity, transform);
+      @include extras.transition(opacity, transform, filter);
     }
     &:hover {
       &::before {
         opacity: 1;
+        filter: blur(0px);
         transform: scale(2.5) translateY(-5px);
       }
 
@@ -95,6 +100,7 @@
   }
 }
 
+// the links
 #links {
   padding: 10px 10px 0;
 
@@ -109,12 +115,12 @@
     width: 350px;
     margin: 10px auto;
     border-radius: 15px;
-    background: color-mix(in srgb, extras.$ctp-green 15%, #1a1 80%);
+    background: extras.$ctp-surface2;
     color: extras.$ctp-text;
     text-transform: capitalize;
     @include extras.transition(background, width);
     &:hover {
-      background: color-mix(in srgb, extras.$ctp-green 5%, #0a0 80%);
+      background: extras.$ctp-surface0;
       width: 380px;
     }
     
