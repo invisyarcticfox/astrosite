@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import Links from '../components/Links.astro'
 import SocialLinks from '../components/SocialLinks.astro'
+import LanSpot from '../components/LanSpot.astro'
 
 import avt from '../assets/avatar.png'
 import spintext from '../assets/spin3d.gif'
@@ -12,6 +13,7 @@ import * as link from '../links';
 
 <Layout>
 	<div id='cont'>
+		<LanSpot />
 		<Image
 			class='avt' src={avt} alt='avt'
 			width={256} height={256}

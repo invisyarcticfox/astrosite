@@ -25,6 +25,15 @@
   }
 }
 
+@keyframes bobUp {
+  0%, 100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 
 $online: #23A55A;
 $idle: #F0B232;
